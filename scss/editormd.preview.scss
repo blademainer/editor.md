@@ -14,9 +14,6 @@
     font-size: 14px;
     line-height: 1.6;
     padding: 20px;
-    overflow: auto;
-    width: 100%;
-    background-color: #fff;
 
     blockquote {
         color: $color;
@@ -27,9 +24,8 @@
         font-style: italic;
     }
 
-    p code {
+    p > code {
         margin-left: 5px;
-        margin-right: 4px;
     }
         
     abbr {
@@ -49,6 +45,7 @@
         padding: 3px;
         border-radius: 3px;
         font-size: 14px;
+        font-family: Consolas, 'Monaco', courier, monospace;
     }
 
     pre {
@@ -60,10 +57,6 @@
         code {
             padding: 0;
         }
-    }
-    
-    pre, code, kbd {        
-        font-family:  "YaHei Consolas Hybrid", Consolas, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, monospace, monospace;
     }
 
     table thead tr {
@@ -88,23 +81,14 @@
         width: 24px;
         height: 24px;
     }
-    
-    .katex {
-        font-size: 1.4em;
-    }
 
     .sequence-diagram, .flowchart {
-        margin: 0 auto;
         text-align: center;
-        
-        svg {
-            margin: 0 auto;
-        }
+    }
 
-        text {
-            font-size  : 15px !important;
-            font-family: "YaHei Consolas Hybrid", Consolas, "Microsoft YaHei", "Malgun Gothic", "Segoe UI", Helvetica, Arial !important;
-        }
+    .sequence-diagram text, .flowchart text {
+        font-size  : 15px !important;
+        font-family: Arial !important;
     }
 }
 
@@ -116,23 +100,21 @@
     pre.prettyprint { 
         padding: 10px; 
         border: 1px solid $borderColor; 
-        white-space: pre-wrap;
-        word-wrap: break-word;
     }
 
     ol.linenums { 
         color: #999; 
         padding-left: 2.5em; 
-    
-        li { 
-            list-style-type: decimal; 
         
-            code {
-                border: none;
-                background:none;  
-                padding: 0;
-            }
+        code {
+            border: none;
+            background:none;  
+            padding: 0;
         }
+    }
+    
+    li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 { 
+        list-style-type: decimal;
     }
 }    
 
@@ -296,27 +278,4 @@ hr.editormd-page-break {
         border: none;
         height: 0;
     }
-}
-
-#{$prefix}preview-close-btn {
-    color: #fff;
-    padding: 4px 6px;
-    font-size: 18px;
-    @include border-radius(500px);
-    display: none;
-    background-color: #ccc;
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    z-index: 19;
-    @include transition(background-color 300ms ease-out);
-
-    &:hover {
-        background-color: #999;
-    }
-}
-
-.editormd-preview-active {
-    width: 100%;
-    padding: 40px;
 }

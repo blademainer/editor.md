@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 @import "lib/variables";
-@import "lib/prefixes";
+@import "lib/functions";
+@import "font-awesome";
         
 .editormd {
     width: 90%;
@@ -9,11 +10,10 @@
     margin: 0 auto;
     text-align: left;
     overflow: hidden;  
-    position: relative;
-    margin-bottom: 15px;
+    position: relative;         
     border: 1px solid $borderColor;
     @include box-sizing(border-box);
-    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif; 
+    font-family: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", Helvetica, Tahoma, "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif; 
     
     a {
         text-decoration: none;
@@ -32,11 +32,6 @@
         outline: 0;
         resize:none;
     }
-    
-    #{$prefix}html-textarea,
-    #{$prefix}markdown-textarea {
-        display : none;
-    }
 
     input[type="text"], 
     input[type="button"], 
@@ -45,6 +40,8 @@
         @include appearance(none);
     }
 }
+
+@import "editormd.logo";
             
 #{$prefix}user-unselect { 
     @include user-select(none); 
@@ -82,8 +79,6 @@
 }
 
 @import "editormd.dialog"; 
-@import "editormd.grid"; 
-@import "editormd.tab"; 
 @import "editormd.form"; 
 @import "editormd.codemirror"; 
 @import "editormd.preview";

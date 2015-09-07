@@ -50,45 +50,39 @@
 
 Bower install :
 
-```shell
-bower install editor.md
-```
+	bower install editor.md
 
 #### Usages
 
 HTML：
 
-```html
-<link rel="stylesheet" href="editormd.min.css" />
-<div id="editormd">
-    <textarea style="display:none;">### Hello Editor.md !</textarea>
-</div>
-```
+    <link rel="stylesheet" href="editormd.min.css" />
+    <div id="editormd">
+        <textarea style="display:none;">### Hello world!</textarea>
+    </div>
 
 > Tip: Editor.md can auto append `<textarea>` tag;
 
 javascript:
 
-```html
-<script src="jquery.min.js"></script>
-<script src="editormd.min.js"></script>
-<script type="text/javascript">
-    $(function() {
-        var editor = editormd("editormd", {
-            path : "../lib/" // Autoload modules mode, codemirror, marked... dependents libs path
-        });
+    <script src="jquery.min.js"></script>
+    <script src="editormd.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var editor = editormd("editormd", {
+                path : "../lib/" // Autoload modules mode, codemirror, marked... dependents libs path
+            });
 
-        /*
-        // or
-        var editor = editormd({
-            id   : "editormd",
-            path : "../lib/"
+            /*
+            // or
+            var editor = editormd({
+                id   : "editormd",
+                path : "../lib/"
+            });
+            */
         });
-        */
-    });
-</script>
-```
-
+    </script>
+    
 Using modular script loader :
 
 - [Using Require.js](https://github.com/pandao/editor.md/tree/master/examples/use-requirejs.html)
